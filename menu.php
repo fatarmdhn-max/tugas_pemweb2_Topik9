@@ -28,7 +28,8 @@
           <a class="nav-link" href="index.php?hal=contact">Contact</a>
         </li>
 
-        <!-- DROPDOWN STUDIES -->
+        <!-- DROPDOWN STUDIES - HANYA TAMPIL JIKA SUDAH LOGIN -->
+        <?php if (isset($_SESSION['user'])): ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
             My Studies
@@ -38,6 +39,7 @@
             <li><a class="dropdown-item" href="index.php?hal=mystudies">Studies</a></li>
           </ul>
         </li>
+        <?php endif; ?>
 
       </ul>
 
@@ -72,7 +74,6 @@
               <li><hr class="dropdown-divider"></li>
 
               <li>
-                <!-- 🔥 FIX LOGOUT -->
                 <a class="dropdown-item text-danger" href="logout.php">
                   Logout
                 </a>
